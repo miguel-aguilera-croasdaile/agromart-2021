@@ -1,0 +1,15 @@
+<div class="container">
+  <h3> New Listing</h3>
+  <p><%= @listing.name %> </p>
+  <p><%= @listing.category %> </p>
+  <p><%= @listing.quantity %> <%= @listing.quantity_unit %></p>
+  <p><%= @listing.currency%> <%= @listing.price.to_i %> </p>
+  <p><%= @listing.address %> </p>
+  <p>Listing by <%= @listing.user.email %> </p>
+</div>
+<div class="container">
+  <%= form_tag orders_path do %>
+    <%= hidden_field_tag 'listing_id', @listing.id %>
+    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <% end %>
+</div>
