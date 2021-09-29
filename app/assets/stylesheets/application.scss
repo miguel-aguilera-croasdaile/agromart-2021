@@ -11,3 +11,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body{
+  min-height: 100vh;
+}
+
+.no-margin{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.special-sauce{
+  border: 1px solid red;
+  padding: 10px;
+}

@@ -6,4 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 u = User.new(email:"miguel@gmail.com", password: "123456", password_confirmation: "123456",)
-u.save!
+u.save
+
+
+30.times do
+  l = Listing.new(name: "Name", category: "Category", quantity_unit: "Kg", quantity: 100, address:"Santa Lucia, Francisco Morazan", price: 1000, currency: "USD", user: u)
+  l.save!
+end

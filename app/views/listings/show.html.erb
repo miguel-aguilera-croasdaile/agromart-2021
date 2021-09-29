@@ -1,15 +1,25 @@
-<div class="container">
-  <h3> New Listing</h3>
-  <p><%= @listing.name %> </p>
-  <p><%= @listing.category %> </p>
-  <p><%= @listing.quantity %> <%= @listing.quantity_unit %></p>
-  <p><%= @listing.currency%> <%= @listing.price.to_i %> </p>
-  <p><%= @listing.address %> </p>
-  <p>Listing by <%= @listing.user.email %> </p>
+<div style="padding-left: 15px; padding-right: 15px">
+  <div class="row">
+    <div class="border col-sm-12 col-md-7 col-lg-7 col-xl-7">
+      <h3> Listing Show </h3>
+      <p><%= @listing.name %> </p>
+      <p><%= @listing.category %> </p>
+      <p><%= @listing.quantity %> <%= @listing.quantity_unit %></p>
+      <p><%= @listing.currency%> <%= @listing.price.to_i %> </p>
+      <p><%= @listing.address %> </p>
+      <p>Listing by <%= @listing.user.email %> </p>
+    </div>
+    <div class="border col-xs-12 col-sm-6 col-md-5 col-lg-5 col-xl-5">
+      <%= form_tag orders_path do %>
+        <%= hidden_field_tag 'listing_id', @listing.id %>
+        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+      <% end %>
+      <%= form_tag orders_path do %>
+        <%= hidden_field_tag 'listing_id', @listing.id %>
+        <%= submit_tag 'Add to Watchlist', class: 'btn btn-secondary' %>
+      <% end %>
+    </div>
+  </div>
 </div>
-<div class="container">
-  <%= form_tag orders_path do %>
-    <%= hidden_field_tag 'listing_id', @listing.id %>
-    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-  <% end %>
-</div>
+
+

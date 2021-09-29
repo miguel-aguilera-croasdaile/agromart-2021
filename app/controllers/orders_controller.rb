@@ -1,5 +1,9 @@
 class OrdersController < ApplicationController
 
+  def index
+    @orders = Order.where(user: current_user)
+  end
+
   def show
     @order = current_user.orders.find(params[:id])
   end
@@ -12,7 +16,7 @@ class OrdersController < ApplicationController
       payment_method_types: ['card'],
       line_items: [{
         name: listing.name,
-        amount: listing.price.to_i,
+        amount: (listing.price * 100),
         currency: listing.currency,
         quantity: 1
         }],

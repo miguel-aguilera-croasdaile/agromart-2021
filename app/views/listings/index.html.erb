@@ -1,0 +1,35 @@
+<div style="padding-left: 15px; padding-right: 15px">
+
+  <div class="row">
+    <div class="border col-12">
+      header
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="border d-none d-md-block col-md-5 col-lg-5 col-xl-4">
+      <div class="border">
+        Search Menu Card
+      </div>
+    </div>
+
+    <div class="border col-sm-12 col-md-8 col-lg-8 col-xl-8">
+      <div class="row">
+        <% @listings.each do |l| %>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" style="margin-bottom: 20px">
+            <%= link_to listing_path(l) do %>
+              <div class="border special-sauce">
+                <p><%= l.name %></p>
+                <p><%= l.currency %></p>
+                <p><%= l.price %></p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+</div>

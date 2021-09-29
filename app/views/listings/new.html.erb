@@ -2,10 +2,13 @@
 <div class="container">
 <h3>Post New Listing</h3>
   <%= simple_form_for(@listing) do |l| %>
+
+    <h4>Product Details</h4>
     <%= l.input :name %>
     <%= l.input :category %>
     <%= l.input :quantity_unit %>
     <%= l.input :quantity %>
+    <h4>Pricing and Shipping</h4>
     <%= l.input :price %>
     <%= l.input :currency %>
     <%= l.input :address %>

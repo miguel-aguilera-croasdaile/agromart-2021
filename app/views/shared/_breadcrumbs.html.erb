@@ -1,0 +1,8 @@
+<% begin %>
+  <% if current_page?(controller: "listings", action: "show") %>
+    <div class="border" style="padding: 15px">
+      <%= link_to "Home", root_path %> > <%= link_to "Listings", listings_path %> > Listing ID
+    </div>
+  <% end %>
+  <% rescue %>
+<% end %>
