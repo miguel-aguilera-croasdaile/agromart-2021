@@ -8,8 +8,10 @@
 u = User.new(email:"miguel@gmail.com", password: "123456", password_confirmation: "123456",)
 u.save
 
+b = [true, false]
 
 30.times do
-  l = Listing.new(name: "Name", category: "Category", quantity_unit: "Kg", quantity: 100, address:"Santa Lucia, Francisco Morazan", price: 1000, currency: "USD", user: u)
+  q = rand(5..100)
+  l = Listing.new(name: Faker::Coffee.blend_name , category: "Coffee", quantity_unit: "Kg", quantity: q, address: Faker::Coffee.origin, price: q*100, currency: "USD", user: u, accepts_offers: b.sample)
   l.save!
 end

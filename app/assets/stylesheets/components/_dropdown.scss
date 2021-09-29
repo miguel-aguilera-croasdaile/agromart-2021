@@ -1,0 +1,47 @@
+.sort-controls{
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  p{margin:0}
+}
+
+.sort-label{
+  display: flex;
+  margin: 5px;
+  text-align: left;
+  font-size: 90%;
+  border: 1px solid rgba(255,255,255, 0.0);
+  align-items: center;
+}
+
+.product-dropdown-toggle{
+  margin: 5px 0;
+  padding: 10px;
+  background-color: $white;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 90%;
+  width: 150px;
+  cursor: pointer;
+}
+
+#product-sort{
+  background-color: $white;
+  width: 150px;
+  font-size: 90%;
+  padding: 0px;
+}
+
+.search-dropdown-link a{
+  padding: 10px !important;
+  transition: all 0.25s ease;
+  color: black
+}
+.search-dropdown-link a:hover{
+  text-decoration: none;
+}
+
+
+.center-horizontally-and-vertically {
+  line-height: inherit;
+}

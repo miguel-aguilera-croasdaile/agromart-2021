@@ -1,0 +1,26 @@
+.searchbar{
+  padding: 3px;
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 100%;
+}
+
+.searchbar-body{
+  border-radius: 5px 0px 0px 5px;
+  border: 0;
+  padding: 5px;
+}
+
+.searchbar-body:focus{
+    outline: none;
+}
+
+.searchbar-submit{
+  border: 0;
+  background-color: $green;
+  border-radius: 5px;
+  color: $white;
+  text-align: center;
+  padding: 5px 15px;
+}

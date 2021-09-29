@@ -2,7 +2,6 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
-    @product = Product.new
   end
 
   def create
@@ -22,7 +21,17 @@ class ListingsController < ApplicationController
   end
 
   def index
-    @listings = Listing.all
+    @listings = Listing.where(available: true)
+    @listings = @listings.search_by_name(params[:name]) if params[:name].present?
+    if params[:sort_by].present?
+      @listings = @listings.sort { |a, b|  b.created_at <=> a.created_at } if params[:sort_by] == "most_recent"
+      @listings = @listings.sort { |a, b|  b.price <=> a.price } if params[:sort_by] == "highest_price"
+      @listings = @listings.sort { |a, b|  a.price <=> b.price } if params[:sort_by] == "lowest_price"
+      @listings = @listings.sort { |a, b|  b.quantity <=> a.quantity } if params[:sort_by] == "most"
+      @listings = @listings.sort { |a, b|  a.quantity <=> b.quantity } if params[:sort_by] == "least"
+    end
+
+    @products = @query
   end
 
   def show

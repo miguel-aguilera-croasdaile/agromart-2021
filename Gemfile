@@ -18,6 +18,8 @@ gem 'simple_form'
 
 gem 'stripe'
 gem 'stripe_event'
+gem 'pg_search'
+gem 'faker'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
@@ -27,7 +29,7 @@ end
 
 group :development do
   gem 'web-console', '>= 4.1.0'
-  gem 'rack-mini-profiler', '~> 2.0'
+  # gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   gem 'spring'
 end

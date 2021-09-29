@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
       payment_method_types: ['card'],
       line_items: [{
         name: listing.name,
-        amount: (listing.price * 100),
+        amount: (listing.price * 100).to_i,
         currency: listing.currency,
         quantity: 1
         }],
@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
         cancel_url: order_url(order)
       )
       order.update(checkout_session_id: session.id)
+      listing.update(available: False)
       redirect_to new_order_payment_path(order)
     end
   end

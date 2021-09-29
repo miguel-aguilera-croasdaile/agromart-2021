@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2021_09_28_203346) do
     t.string "category"
     t.string "quantity_unit"
     t.float "quantity"
+    t.boolean "available", default: true
+    t.boolean "accepts_offers", default: false
     t.string "address"
     t.float "price"
     t.string "currency"
