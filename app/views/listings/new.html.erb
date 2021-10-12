@@ -1,17 +1,16 @@
-
 <div class="container">
-<h3>Post New Listing</h3>
-  <%= simple_form_for(@listing) do |l| %>
-
+  <h3>Post New Listing</h3>
+  <%= simple_form_for(@listing) do |f| %>
     <h4>Product Details</h4>
-    <%= l.input :name %>
-    <%= l.input :category %>
-    <%= l.input :quantity_unit %>
-    <%= l.input :quantity %>
+    <%= f.input :name %>
+    <%= f.input :category %>
     <h4>Pricing and Shipping</h4>
-    <%= l.input :price %>
-    <%= l.input :currency %>
-    <%= l.input :address %>
-    <%= l.submit %>
+    <%= f.input :price %>
+    <%= f.input :quantity %>
+    <%= f.input :quantity_unit %>
+    <%= f.input :currency %>
+    <%= f.input :address %>
+    <%= f.submit 'Create Listing', class: "primary-button" %>
   <% end %>
 </div>
+<br>

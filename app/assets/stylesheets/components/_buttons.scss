@@ -1,0 +1,11 @@
+.primary-button{
+  background-color: $brand-green;
+  border: 2px solid $brand-green;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 10px;
+}
+
+.primary-button.wide{
+  width: 100%;
+}

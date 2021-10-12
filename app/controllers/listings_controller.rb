@@ -22,7 +22,7 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.where(available: true)
-    @listings = @listings.search_by_name(params[:name]) if params[:name].present?
+    @listings = @listings.search_by_name(params[:name]) if params[:name].present? and params[:name] != ""
     if params[:sort_by].present?
       @listings = @listings.sort { |a, b|  b.created_at <=> a.created_at } if params[:sort_by] == "most_recent"
       @listings = @listings.sort { |a, b|  b.price <=> a.price } if params[:sort_by] == "highest_price"
@@ -32,6 +32,9 @@ class ListingsController < ApplicationController
     end
 
     @products = @query
+    if params[:name] == ""
+      redirect_to listings_path
+    end
   end
 
   def show

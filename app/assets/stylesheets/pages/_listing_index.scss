@@ -1,0 +1,31 @@
+.index-wrapper{
+  padding: 0 15px;
+  padding-top: 30px
+}
+
+.listing-card-wrapper, .listing-card-wrapper > a{
+  color: black;
+}
+
+.listing-card-wrapper:hover{
+  a{text-decoration: none;}
+}
+
+.listing-card{
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+}
+
+.listing-flat{
+  padding: 20px;
+  background-color: white;
+}
+
+.stars, .certificates{
+  i{line-height: inherit !important;}
+}
+
+.certificates{
+  color: $brand-green;
+}

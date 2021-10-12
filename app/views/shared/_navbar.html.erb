@@ -6,9 +6,10 @@
     <% end %>
   </div>
   <div class=" d-none d-md-block col-md-4 col-lg-5 col-xl-6 ">
+
     <%= form_tag listings_path, class: "searchbar", method: :get do %>
       <%= text_field_tag :name, params[:name],class: "searchbar-body col-10", placeholder: "Search" %>
-      <%= button_tag(type: "submit", class: "col-2 btn btn-default") do %>
+      <%= button_tag(type: "submit", class: "col-2 btn btn-default", name: nil) do %>
         <i class="fas fa-search"></i>
       <% end %>
     <% end %>
@@ -29,22 +30,28 @@
               <% end %>
             </li>
             <li class="nav-item active">
-              <%= link_to orders_path, class: "nav-link" do %>
-                My Orders
+              <%= link_to listings_path, class: "nav-link" do %>
+                Read
               <% end %>
             </li>
           </div>
           <li class="ml-auto nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <div class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="" aria-haspopup="true" aria-expanded="false"> </div>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <%= link_to destroy_user_session_path, method: :delete do %>
+              <%= link_to orders_path, class: "nav-link" do %>
+                <div class="dropdown-item">My Orders</div>
+              <% end %>
+              <%= link_to destroy_user_session_path, class:"nav-link", method: :delete do %>
                 <div class="dropdown-item">Sign Out</div>
               <% end %>
             </div>
           </li>
         <% else %>
+          <li class="nav-item active">
+            <%= link_to listings_path, class: "nav-link" do %>
+              Read
+            <% end %>
+          </li>
           <li class="nav-item active">
             <%= link_to new_user_session_path, class: "nav-link" do %>
               Sign In
